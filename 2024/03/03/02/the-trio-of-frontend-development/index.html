@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="NZ Louis&#39; Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/htmlcss.png">
+    <meta property="twitter:image" content="/img/htmlcss.png" />
+    
+
+    
+    <meta name="title" content="The Trio of Frontend Development: JavaScript, HTML, and CSS" />
+    <meta property="og:title" content="The Trio of Frontend Development: JavaScript, HTML, and CSS" />
+    <meta property="twitter:title" content="The Trio of Frontend Development: JavaScript, HTML, and CSS" />
+    
+
+    
+    <meta name="description" content="This article delves into the origins, history, and future trends of the three core technologies in frontend development: JavaScript, HTML, and CSS. Learn about their significance, evolution, and their enduring importance in today&#39;s development landscape.">
+    <meta property="og:description" content="This article delves into the origins, history, and future trends of the three core technologies in frontend development: JavaScript, HTML, and CSS. Learn about their significance, evolution, and their enduring importance in today&#39;s development landscape." />
+    <meta property="twitter:description" content="This article delves into the origins, history, and future trends of the three core technologies in frontend development: JavaScript, HTML, and CSS. Learn about their significance, evolution, and their enduring importance in today&#39;s development landscape." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="NZ Louis, Louis Lu, Louis, Louis&#39; Blog, blog, Web, PaaS, Istio, Kubernetes, Microservice">
+    <link rel="shortcut icon" href="/img/l.ico">
+
+    <title>The Trio of Frontend Development: JavaScript, HTML, and CSS | NZ Louis&#39; Blog</title>
+
+    <link rel="canonical" href="/2024/03/02/the-trio-of-frontend-development/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TX6F6B0GN9"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-TX6F6B0GN9', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">NZ Louis&#39; Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+                    <li>
+                        <a href="/categories/tech">Tech</a>
+                    </li>
+                    <li>
+                        <a href="/categories/frontend">Front-End</a>
+                    </li>
+                    <li>
+                        <a href="/categories/backend">Back-End</a>
+                    </li>
+                    <li>
+                        <a href="/categories/life">Life</a>
+                    </li>
+		            
+                        <li><a href="/archive/">ARCHIVE</a></li>
+                    
+                    <li>
+                        <a href="https://nzlouis.com" >About</a>
+                    </li>
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/htmlcss.png')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/javascript" title="JavaScript">
+                            JavaScript
+                        </a>
+                        
+                        <a class="tag" href="/tags/html" title="HTML">
+                            HTML
+                        </a>
+                        
+                        <a class="tag" href="/tags/css" title="CSS">
+                            CSS
+                        </a>
+                        
+                        <a class="tag" href="/tags/frontend-development" title="Frontend Development">
+                            Frontend Development
+                        </a>
+                        
+                        <a class="tag" href="/tags/web-development" title="Web Development">
+                            Web Development
+                        </a>
+                        
+                        <a class="tag" href="/tags/evolution-of-technology" title="Evolution of Technology">
+                            Evolution of Technology
+                        </a>
+                        
+                        <a class="tag" href="/tags/programming-languages" title="Programming Languages">
+                            Programming Languages
+                        </a>
+                        
+                        <a class="tag" href="/tags/web-design" title="Web Design">
+                            Web Design
+                        </a>
+                        
+                        <a class="tag" href="/tags/web-technologies" title="Web Technologies">
+                            Web Technologies
+                        </a>
+                        
+                        <a class="tag" href="/tags/software-development" title="Software Development">
+                            Software Development
+                        </a>
+                        
+                    </div>
+                    <h1>The Trio of Frontend Development: JavaScript, HTML, and CSS</h1>
+                    <h2 class="subheading">Exploring Their Origins, Evolution, and Future Trends</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Louis Lu
+                             
+                            on 
+                            Saturday, March 2, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>JavaScript, HTML, and CSS are the three most commonly used technologies in the field of frontend development, collectively forming the foundation of modern web pages. Despite their long history, these three technologies continue to play an indispensable role in web development. This article delves into the origins, history, current status, future trends, and the reasons why they remain crucial in today&rsquo;s development landscape.</p>
+<h2 id="1-origins-of-the-technologies">1. Origins of the Technologies</h2>
+<h3 id="11-javascript">1.1 JavaScript</h3>
+<p>JavaScript, born in 1995, developed by Brendan Eich at Netscape browser, initially named LiveScript, aimed to add dynamic effects to web pages. JavaScript is a prototype-based, object-oriented, interpreted programming language with features like:</p>
+<ul>
+<li>Lightweight, easy to learn, and use</li>
+<li>Dynamically typed, weak type checking</li>
+<li>Supports object-oriented programming</li>
+<li>Rich set of built-in objects and libraries</li>
+</ul>
+<p>Initially used for client-side scripting, JavaScript expanded to server-side development with the advent of Node.js.</p>
+<h3 id="12-html">1.2 HTML</h3>
+<p>HTML, born in 1989, invented by Tim Berners-Lee, is a standard markup language defining the structure and content of web pages. Comprising a series of tags, each tag has a specific meaning. HTML&rsquo;s syntax is simple and allows rapid web page creation.</p>
+<p>Originally a static markup language, HTML progressed to support dynamic content and interactive features.</p>
+<h3 id="13-css">1.3 CSS</h3>
+<p>CSS, born in 1996 and proposed by Norwegian computer scientist Håkon Wium Lie, is a language for styling web pages. Controlling elements like fonts, colors, and layout, CSS enhances the visual appeal and usability of web pages. With a concise syntax and support for cascading style sheets, CSS facilitates easy control of page styles.</p>
+<p>Initially used for static styles, CSS evolved to control dynamic styles and animation effects.</p>
+<h2 id="2-significance">2. Significance</h2>
+<p>The continued importance of these three technologies today can be attributed to several factors:</p>
+<ul>
+<li><strong>Proliferation of Web Applications:</strong> With the growth of the internet, an increasing number of applications have migrated to the web, where JavaScript, HTML, and CSS serve as foundational technologies.</li>
+<li><strong>Development of Mobile Internet:</strong> The prevalence of mobile devices posed new challenges for web development, and these three technologies adeptly meet the requirements of mobile devices.</li>
+<li><strong>Rich Development Frameworks and Tools:</strong> A rich ecosystem of development frameworks and tools has formed around these three technologies, enabling developers to work more efficiently.</li>
+</ul>
+<h2 id="3-evolution-of-the-technologies">3. Evolution of the Technologies</h2>
+<h3 id="31-javascript">3.1 JavaScript</h3>
+<p>JavaScript evolved from a simple scripting language into a powerful programming language, spawning popular frameworks and libraries like Node.js, React, and Angular. It has become an integral part of web development, applied in server-side, mobile, and desktop domains.</p>
+<p><strong>Timeline of JavaScript Development:</strong></p>
+<ul>
+<li><strong>1997:</strong> ECMAScript 1 release, laying the foundation for JavaScript.</li>
+<li><strong>1999:</strong> ECMAScript 3 release, one of the most popular versions, establishing the groundwork for future development.</li>
+<li><strong>2009:</strong> ECMAScript 5 release, introducing important features like strict mode, JSON support, and array iteration methods.</li>
+<li><strong>2015:</strong> ECMAScript 6 release, also known as ES2015, a major update introducing features like arrow functions, template literals, and classes.</li>
+<li><strong>2017-2021:</strong> Annual releases of new ECMAScript versions introducing progressive enhancements, including async/await, Promises, and modules, further improving development efficiency and expressiveness.</li>
+</ul>
+<p><strong>Applications of JavaScript:</strong></p>
+<p>JavaScript, a powerful programming language, finds applications in various domains, including:</p>
+<ul>
+<li><strong>Browser-Side Web Development:</strong> Traditionally used to create interactive web pages and web applications.</li>
+<li><strong>Server-Side Development:</strong> Thanks to the rise of Node.js, JavaScript is used for building high-performance, scalable web servers and applications.</li>
+<li><strong>Mobile Development:</strong> Frameworks like React Native enable JavaScript for cross-platform mobile app development, offering native performance and experience.</li>
+<li><strong>Desktop Development:</strong> Frameworks like Electron allow JavaScript for desktop application development, providing a consistent user experience with native desktop applications.</li>
+<li><strong>Game Development:</strong> JavaScript is employed for developing various games, including browser games, mobile games, and desktop games.</li>
+<li><strong>Internet of Things (IoT) Development:</strong> JavaScript is used for developing applications for IoT devices, communicating with the cloud.</li>
+</ul>
+<p><strong>Popular JavaScript Frameworks and Libraries:</strong></p>
+<p>To enhance development efficiency, the JavaScript community has developed many frameworks and libraries, including:</p>
+<ul>
+<li><strong>Node.js:</strong> Used for server-side development, building high-performance, scalable web servers and applications.</li>
+<li><strong>React:</strong> Used for building user interfaces, currently one of the most popular frontend frameworks.</li>
+<li><strong>Angular:</strong> Used for building single-page applications, providing a comprehensive solution.</li>
+<li><strong>Vue.js:</strong> Used for building user interfaces, a lightweight and easy-to-use framework.</li>
+<li><strong>jQuery:</strong> Used to simplify JavaScript operations, one of the earliest and most popular JavaScript libraries.</li>
+</ul>
+<h3 id="32-html">3.2 HTML</h3>
+<p>HTML evolved from a static markup language to a dynamic language supporting multimedia, interaction, and introduced new versions like HTML5, bringing new opportunities and challenges to web development.</p>
+<p><strong>Timeline of HTML Development:</strong></p>
+<ul>
+<li><strong>1995:</strong> HTML 2.0 release, introducing new tags and attributes like <code>&lt;img&gt;</code>, <code>&lt;form&gt;</code>, etc.</li>
+<li><strong>1997:</strong> HTML 4.0 release, one of the most popular HTML versions, laying the foundation for future development.</li>
+<li><strong>2014:</strong> HTML5 release, a significant update introducing new semantic tags, multimedia support, offline applications, geolocation, drag-and-drop, and other essential features.</li>
+</ul>
+<p><strong>Applications of HTML:</strong></p>
+<ul>
+<li><strong>Web Development</strong></li>
+<li><strong>Mobile Development</strong></li>
+<li><strong>Other Applications</strong></li>
+</ul>
+<p><strong>HTML5 New Features:</strong></p>
+<ul>
+<li>New semantic tags for clearer and more understandable webpage structure.</li>
+<li>Multimedia support allowing direct playback of audio and video in web pages.</li>
+<li>Offline application support enabling web pages to be accessed offline.</li>
+<li>Geolocation support allowing web pages to access user location information.</li>
+<li>Drag-and-drop support enabling drag-and-drop operations on web pages.</li>
+</ul>
+<h3 id="33-css">3.3 CSS</h3>
+<p><strong>CSS</strong> (Cascading Style Sheets) is a style sheet language for describing the presentation of a document. It controls elements such as fonts, colors, layout, and borders, enhancing the aesthetic appeal and usability of web pages. With a development timeline from 1996 to CSS3 in 2007, it introduced many new features like flexbox, animations, and media queries, making web design more flexible and interactive.</p>
+<p><strong>CSS Development Timeline:</strong></p>
+<ul>
+<li><strong>1996:</strong> CSS 1 release, laying the foundation and providing basic style control features.</li>
+<li><strong>1998:</strong> CSS 2 release, introducing more style properties and selectors, enhancing CSS&rsquo;s expressive capabilities.</li>
+<li><strong>2007:</strong> CSS 3 release, a significant update introducing many new features, including flexbox, animations, media queries, making web page design more flexible and interactive.</li>
+</ul>
+<p><strong>Advantages of CSS:</strong></p>
+<ul>
+<li><strong>Separation of Content and Presentation:</strong> Separating content and presentation aids code maintainability and reusability.</li>
+<li><strong>Cascading Style:</strong> Allows the use of cascading style sheets, making it easy to control element styles under different circumstances.</li>
+<li><strong>Cross-Browser Compatibility:</strong> Most mainstream browsers support CSS, ensuring good display effects on different browsers.</li>
+</ul>
+<p><strong>Applications of CSS:</strong></p>
+<ul>
+<li>Core technology in web development, used for designing and beautifying web pages.</li>
+<li>Used to build responsive layouts, making web pages adaptable to different screen sizes.</li>
+<li>Used to create animations and effects, making web pages more dynamic and interesting.</li>
+</ul>
+<p><strong>CSS3 New Features:</strong></p>
+<p>CSS3 introduced many new features, providing greater flexibility and functionality for web design and development. Some important features include:</p>
+<ol>
+<li><strong>Media Queries:</strong> Allows styles to adapt based on device or browser properties, enabling responsive design.</li>
+<li><strong>Box Model:</strong> Provides more flexible control over element layout, including the <code>box-sizing</code> property.</li>
+<li><strong>Gradients:</strong> Creates smooth transition effects without using images, improving loading speed and design flexibility.</li>
+<li><strong>Animations:</strong> Creates rich animation effects without relying on JavaScript, simplifying implementation and improving efficiency.</li>
+<li><strong>Multi-column Layout:</strong> Easily creates multi-column text layouts, adapting to different screen sizes and devices.</li>
+<li><strong>Flexbox:</strong> Creates flexible layout structures, achieving responsive and flexible page design.</li>
+</ol>
+<p>CSS3 features enhance the flexibility and responsiveness of web page design, reducing dependence on JavaScript and helping developers create a better user experience.</p>
+<h2 id="4-popularization-of-technologies">4. Popularization of Technologies</h2>
+<p>These three technologies are highly popular today, with almost all web developers needing to master them. According to Stack Overflow&rsquo;s survey, JavaScript is one of the world&rsquo;s most popular programming languages, and HTML and CSS are among the most commonly used web development technologies.</p>
+<h2 id="5-future-outlook">5. Future Outlook</h2>
+<p>As web technology advances, JavaScript, HTML, and CSS will remain the core technologies in frontend development. In the future, these three technologies may continue to evolve to meet new demands and challenges.</p>
+<p><strong>Here are some future trends:</strong></p>
+<h3 id="51-javascript">5.1 JavaScript:</h3>
+<ul>
+<li>More web applications will be built using JavaScript.</li>
+<li>Continued development of JavaScript, supporting new features like:
+<ul>
+<li>More powerful modular systems</li>
+<li>Enhanced type support</li>
+<li>Improved performance and security</li>
+</ul>
+</li>
+</ul>
+<h3 id="52-html">5.2 HTML:</h3>
+<ul>
+<li>HTML5 will continue to gain popularity.</li>
+<li>New HTML versions may introduce new semantic tags and features, such as:
+<ul>
+<li>Richer semantic tags for describing webpage content</li>
+<li>Support for Web Components</li>
+</ul>
+</li>
+</ul>
+<h3 id="53-css">5.3 CSS:</h3>
+<ul>
+<li>CSS3 will continue to gain popularity.</li>
+<li>New CSS versions may introduce new styles and animation effects, such as:
+<ul>
+<li>More flexible layout systems</li>
+<li>More powerful animation features</li>
+<li>Support for 3D transformations</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-conclusion">6. Conclusion</h2>
+<p>JavaScript, HTML, and CSS are the three core technologies in the field of web development, crucial for web developers. Mastering these technologies can help developers create richer, more interactive web pages and lay the foundation for future career development.</p>
+<h2 id="7-learning-resources">7. Learning Resources</h2>
+<ul>
+<li>JavaScript Tutorial: 
+<a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer nofollow">https://www.w3schools.com/js</a>
+</li>
+<li>HTML Tutorial: 
+<a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer nofollow">https://www.w3schools.com/html</a>
+</li>
+<li>CSS Tutorial: 
+<a href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer nofollow">https://www.w3schools.com/css</a>
+</li>
+<li>JavaScript Video Tutorial: 
+<a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank" rel="noopener noreferrer nofollow">https://www.youtube.com/watch?v=qz0aGYrrlhU</a>
+</li>
+<li>Html &amp; CSS Video Tutorial: 
+<a href="https://www.youtube.com/watch?v=qz0aGYrrlhU" target="_blank" rel="noopener noreferrer nofollow">https://www.youtube.com/watch?v=qz0aGYrrlhU</a>
+</li>
+</ul>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2024/02/24/backend-tech-the-foundation-of-software/" data-toggle="tooltip" data-placement="top" title="Backend Technology: The Foundation of Software Construction">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2024/03/10/java-and-spring-in-depth-understanding/" data-toggle="tooltip" data-placement="top" title="Java and Spring: In-Depth Analysis and Comprehensive Understanding">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/css" title="css">
+                            css
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/front-end-development" title="front-end-development">
+                            front-end-development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/front-end-frameworks" title="front-end-frameworks">
+                            front-end-frameworks
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/frontend-development" title="frontend-development">
+                            frontend-development
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/html" title="html">
+                            html
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/java" title="java">
+                            java
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/javascript" title="javascript">
+                            javascript
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/microservices" title="microservices">
+                            microservices
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/node.js" title="node.js">
+                            node.js
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/programming-languages" title="programming-languages">
+                            programming-languages
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/react" title="react">
+                            react
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/software-development" title="software-development">
+                            software-development
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/technology" title="technology">
+                            technology
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/typescript" title="typescript">
+                            typescript
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/web-development" title="web-development">
+                            web-development
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://nzmarie.com/blog">NZ Marie&#39;s blog</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:nzlouis.com@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ailouislu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/ailouis">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+             </ul>
+		        <p class="copyright text-muted">
+                    Copyright &copy; NZ Louis&#39; Blog 2025
+                    <br>
+                     by <a href="https://nzlouis.com">NZ Louis</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
